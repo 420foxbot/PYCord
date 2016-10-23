@@ -7,19 +7,16 @@ class Client:
 
     def __init__(self,token):
         self.token = token
+
     def sendMessage(self,id,content):
         payload = {
             "content":content
         }
 
         headers = {
-            'authorization': self.token,
+            'authorization': "Bot " + self.token,
             'content-type': "application/json",
             'cache-control': "no-cache"
         }
 
         conn.request("POST", "/api/channels/{}/messages".format(id), json.dumps(payload), headers)
-
-        data = conn.getresponse()
-        res = data.read()
-        print(res)
