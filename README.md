@@ -1,3 +1,3 @@
-# Introducing JS Cord
+# Introducing PY Cord
 
-JS Cord is still under development we are currently working on the login and the regular functions a libaray would need.
+PY Cord is still under development we are currently working on the login and the regular functions a libaray would need.
