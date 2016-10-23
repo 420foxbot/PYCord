@@ -17,7 +17,7 @@ class Client:
         headers = {
             'authorization': "Bot " + self.token,
             'content-type': "application/json",
-            'cache-control': "no-cache"
+            'cache-control': "no-cache",
             "user-agent":"DiscordBot (https://github.com/developerCodex/PYCord, 1.2.1)"
         }
         url = baseurl+"channels/{}".format(id)
