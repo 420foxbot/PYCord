@@ -29,7 +29,7 @@ class Client:
             'cache-control': "no-cache"
         }
 
-        conn.request("GET", "/api/channels/{}/messages/{}".format(channel,messageid), headers = headers)
+        conn.request("GET", "/api/channels/{}/messages/{}".format(channel,messageid),None,headers)
         res = conn.getresponse()
         data = res.read().decode()
         return data
