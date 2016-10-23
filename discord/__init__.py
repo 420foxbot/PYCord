@@ -18,7 +18,7 @@ class Client:
             'cache-control': "no-cache"
         }
 
-        conn.request("POST", "/api/channels/112233445566778899/messages", json.dumps(payload), headers)
+        conn.request("POST", "/api/channels/{}}/messages".format(id), json.dumps(payload), headers)
 
         data = conn.getresponse()
         res = data.read()
