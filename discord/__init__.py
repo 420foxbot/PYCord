@@ -21,3 +21,15 @@ class Client:
         }
 
         conn.request("POST", "/api/channels/{}/messages".format(id), json.dumps(payload), headers)
+
+    def getMessage(self,channel,messageid):
+        headers = {
+            'authorization': "Bot " + self.token,
+            'content-type': "application/json",
+            'cache-control': "no-cache"
+        }
+
+        conn.request("GET", "/api/channels/{}/messages/{}".format(channel,messageid), json.dumps(payload), headers)
+        res = conn.getresponse()
+        data = res.read().decode()
+        return data
