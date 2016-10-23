@@ -1,6 +1,6 @@
-import http.client
+import requests
 import json
-conn = http.client.HTTPSConnection("discordapp.com")
+baseurl = "https://discordapp.com/api/"
 
 class Client:
     """A Discord Client"""
@@ -18,19 +18,20 @@ class Client:
             'authorization': "Bot " + self.token,
             'content-type': "application/json",
             'cache-control': "no-cache"
+            "user-agent":"DiscordBot (https://github.com/developerCodex/PYCord, 1.2.1)"
         }
-
-        conn.request("POST", "/api/channels/{}/messages".format(id), json.dumps(payload), headers)
+        url = baseurl+"channels/{}".format(id)
+        response = requests.request("POST", url, data=payload, headers=headers)
+        return response.text
 
     def getMessage(self,channel,messageid):
         payload = {}
         headers = {
             'authorization': "Bot " + self.token,
             'content-type': "application/json",
-            'cache-control': "no-cache"
+            'cache-control': "no-cache",
+            "user-agent":"DiscordBot (https://github.com/developerCodex/PYCord, 1.2.1)"
         }
-
-        conn.request("GET", "/api/channels/{}/messages/{}".format(channel,messageid),json.dumps(payload),headers)
-        res = conn.getresponse()
-        data = res.read().decode()
-        return data
+        url = baseurl+"channels/{}/messages/{}".format(channel,messageid)
+        response = requests.request("GET", url, data=json.dumps(payload), headers=json.dumps(headers))
+        return response.text
