@@ -1,3 +1,3 @@
-# JS Cord
+# Introducing JS Cord
 
-Introducing JS Cord, JSCord is created by devCodex and Joseph, this is for Discord bots and for a libaray for discord bots.
+JS Cord is still under development we are currently working on the login and the regular functions a libaray would need.
