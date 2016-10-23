@@ -8,9 +8,10 @@ class Client:
     def __init__(self,token):
         self.token = token
 
-    def sendMessage(self,id,content):
+    def sendMessage(self,id,content,tts : bool = False):
         payload = {
-            "content":content
+            "content":content,
+            "tts":tts
         }
 
         headers = {
