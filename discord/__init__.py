@@ -4,6 +4,9 @@ conn = http.client.HTTPSConnection("discordapp.com")
 
 class Client:
     """A Discord Client"""
+
+    def __init__(self):
+        self.token=""
     def login(self,token):
         if token:
             self.token = token
