@@ -22,3 +22,7 @@ class Client:
         }
 
         conn.request("POST", "/api/channels/112233445566778899/messages", json.dumps(payload), headers)
+
+        data = conn.getresponse()
+        res = data.read()
+        print(res)
